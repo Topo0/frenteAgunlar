@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{edCliente !=null ? 'Editar Usuario': 'Nuevo Usuario'}}</h1>
+
+<div mat-dialog-conent>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput laceholder="Nombre" [(ngModel)]="nombre" >
+    </mat-form-field><br/>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input matInput laceholder="Apellido" [(ngModel)]="apellido" >
+    </mat-form-field>
+</div>
+
+<div mat-dialog-action>
+    <button mat-stroked-button color="accent"
+     (click)="edCliente !=null? editCliente() : addCliente()">{{edCliente!=null? 'Editar Cliente': 'Nuevo Cliente'}}</button>
+    <button mat-stroked-button color="warn" (click)="cerrar()">Cancelar</button>
+</div> 

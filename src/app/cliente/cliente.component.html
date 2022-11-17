@@ -1,0 +1,40 @@
+
+<p>Base De Datos Clientes</p> 
+<div>
+  <button mat-stroked-button color="accent" (click)="openAddCli()">Agregar Cliente</button>
+</div>
+<br/>
+<table mat-table [dataSource]="lst"  class="mat-elevation-z8">
+
+  <!-- Name IdCliente -->
+  <ng-container matColumnDef="idCliente">
+    <th mat-header-cell *matHeaderCellDef> No. Cliente </th>
+    <td mat-cell *matCellDef="let element"> {{element.idCliente}} </td>
+  </ng-container>
+
+  <!-- Name Nombre -->
+  <ng-container matColumnDef="Nombre">
+    <th mat-header-cell *matHeaderCellDef> nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  <!-- Name Apellido -->
+  <ng-container matColumnDef="Apellido">
+      <th mat-header-cell *matHeaderCellDef> apellido </th>
+      <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+  </ng-container>
+
+  <!-- Name Accions -->
+  <ng-container matColumnDef="Acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="openEdit(element)" mat-stroked-button color="accent">Editar</button> &nbsp; &nbsp;
+      <button (click)="openDelete(element)"  mat-stroked-button color="warn">Eliminar</button>
+    </td>
+  </ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns:columnas;"></tr>
+  
+</table>
+ 
